@@ -16,6 +16,9 @@ class Router {
         $this->routeMap = json_decode($json, true);
     }
 
+    /*
+    * Tries to match Request to valid json route, forward to Controller on success
+    */
     public function route(Request $request) : string {
         $path = $request->getPath();
 
@@ -32,6 +35,9 @@ class Router {
         return $errorController->notFound();
     }
 
+    /*
+    * Extracts route from url
+    */
     private function getRegexRoute(
         string $route,
         array $info
@@ -46,6 +52,9 @@ class Router {
         return $route;
     }
 
+    /*
+    * Extracts parameters from url
+    */
     private function extractParams(
         string $route,
         string $path
@@ -65,6 +74,10 @@ class Router {
         return $params;
     }
 
+    /*
+    * Checks if login is requierd to perform method then executes correct controller
+    ! (Only using one controller in this project) 
+    */
     private function executeController (
         string $route,
         string $path,
