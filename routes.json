@@ -1,0 +1,38 @@
+{
+    "courses": {
+        "controller": "Course",
+        "method": "getAll"
+    },
+
+    "course/:id": {
+        "controller": "Course",
+        "method": "get",
+        "params": {
+            "id": "number"
+        }
+    },
+
+    "course/:id/add": {
+        "controller": "Course",
+        "method": "add",
+        "params": {
+            "id": "number"
+        }
+    },
+
+    "course/:id/update": {
+        "controller": "Course",
+        "method": "update",
+        "params": {
+            "id": "number"
+        }
+    },
+
+    "course/:id/delete": {
+        "controller": "Course",
+        "method": "delete",
+        "params": {
+            "id": "number"
+        }
+    }
+}
